@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/favicon-32x32.png">
+    <title>Clickbait Detector</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-h1">🧐 Clickbait Detector</h1>
+    </header>
+
+    <main class="main">
+        <div class="main-div1">
+            <p>
+                This application is a Streamlit dashboard that can be used to predict whether an article headline is clickbait or not. Simply submit the headline that you would like to test below:
+            </p>
+        </div>
+
+        <div class="main-div2">
+
+            <form action="/" method="post">
+                <div class="main-div2-div1">
+                    <label for="">Enter headline here</label>
+                </div>
+                <div class="main-div2-div2">
+                    <textarea name="headline" id="textA" cols="30" rows="10" value>{{headline}}</textarea>
+                </div>
+                <div class="main-div2-div3">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+
+        {% if label==1 %}
+            <div class="main-div3-clickbait">
+                <p>This headline is clickbait</p>
+            </div>
+        {% elif label==0 %}
+            <div class="main-div3-nonclickbait">
+                <p>This is not clickbait, click on!</p>
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>
